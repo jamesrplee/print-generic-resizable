@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <script type="text/javascript">
+
+    // config for vminvmax.js
+    var vminsize = 2
+    var vmaxsize = 1.4
+    var vhsize   = 2
+
+  </script>
+  <script type="text/javascript" src="assets/javascripts/vminvmax.js"></script>
+
+  <!-- Any css that contains mustache tags must be in the head of the index.mst file  -->
+  <style type="text/css">
+
+    .content {
+      font-size: {{font-size}};
+      /*template is designed for 1em to be used as a base font size*/
+    }
+
+    .custom-background {
+      background-image: url('{{{background-image}}}');
+    }
+
+  </style>
+</head>
+<body class="{{theme}}">
+  <div class="background-image">
+    <div class="content">
+      <h1 class="headline">{{{headline}}}</h1>
+      <h2 class="subheading">{{{subheading}}}</h2>
+      <a class="call-to-action" href="{{{call-to-action-url}}}">{{{call-to-action}}}</a>
+    </div>
+  <div class="logo">
+    {{{logo}}}
+  </div>
+  </div>
+</body>
+</html>
