@@ -42,7 +42,7 @@ Finally all of your `mustache` variables are filled with data and a built versio
 
 - The `src/data.json` file is where the dummy data for your outfit variables will be stored
 
-  **A Basic Outfit variable in `src/html.mst`:**
+  **A Basic Outfit variable in `src/index.mst`:**
 
   ```
   <h1>{{ headline }}</h1>
