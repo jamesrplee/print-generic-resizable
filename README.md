@@ -2,6 +2,7 @@
 
 This is a solid starting point for any future 'big red box-esque' [outfit](http://outfit.io) templating work.
 
+<br> 
 ##What does it do?
 
 This template allows you to easily create a generic resizable outfit template for your brand using this as a starting point. All the heavy lifting regarding scalable fonts for any dimension or size has been taken care of for you using `vminvmax`. Custom media queries for different aspect ratios have been created in `PostCSS` and `cssnext`. `cssnext` also has support for native css varibles. `PostCSS` also autoprefixes your css if a prefix is required. suck it `-webkit`.
