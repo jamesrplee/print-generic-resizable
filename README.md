@@ -13,11 +13,14 @@ Finally all of your `mustache` variables are filled with data and a built versio
 
 ##Setting it up.
 
-1. Clone this Repository
+1. Clone this Repository: <br>
+  `git clone https://github.com/johnpmorris/GenericResizable.git`
 
-2. cd GenericResizable
+2. Navigate to the repo directory: <br>
+  `cd GenericResizable`
 
-3. mkdir -p build/assets/stylesheets && mkdir -p build/assets/javascripts
+3. Create build folder: <br>
+  `mkdir -p build/assets/stylesheets && mkdir -p build/assets/javascripts`
 
 4. `npm install`
 
