@@ -13,6 +13,11 @@ Finally all of your `mustache` variables are filled with data and a built versio
 
 ##Setting it up.
 
+Before you start you need to have node and npm installed. 
+[Installing Node.js and updating npm](https://docs.npmjs.com/getting-started/installing-node)
+
+##Setting it up.
+
 1. Clone this Repository: <br>
   `git clone https://github.com/johnpmorris/GenericResizable.git`
 
