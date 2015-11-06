@@ -21,13 +21,13 @@
       /*template is designed for 1em to be used as a base font size*/
     }
 
-    .custom-background {
+    .background-image {
       background-image: url('{{{background-image}}}');
     }
 
   </style>
 </head>
-<body class="{{theme}}">
+<body class="{{reversed}}">
   <div class="background-image">
     <div class="content">
       <h1 class="headline">{{{headline}}}</h1>

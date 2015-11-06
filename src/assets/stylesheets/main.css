@@ -52,7 +52,6 @@ body {
 .reversed {
   .content {
     color: var(--backgroundColor);
-    background-color: var(--textColor);
   }
 
   .call-to-action {
