@@ -11,7 +11,7 @@
     var vhsize   = 2
 
   </script>
-  <script type="text/javascript" src="assets/javascripts/vminvmax.js"></script>
+  <script type="text/javascript" src="assets/javascripts/main.js"></script>
 
   <!-- Any css that contains mustache tags must be in the head of the index.mst file  -->
   <style type="text/css">
