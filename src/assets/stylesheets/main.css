@@ -17,6 +17,7 @@
 }
 
 html {
+  -webkit-font-smoothing: antialiased;
   font-family: 'Avenir', 'Helvetica', sans-serif;
   overflow: hidden !important;
 }
