@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600);
+@import url("https://red-hat-overpass-fonts.s3.amazonaws.com/overpass.css")l;
 
 @custom-media --taller-and-thinner   (max-aspect-ratio: 4 / 10);
 
@@ -11,14 +11,14 @@
 @custom-media --wider-and-shorter    (min-aspect-ratio: 12 / 3);
 
 :root {
-  --textColor: #FF3720;
+  --textColor: #444444;
   --backgroundColor: #FFFFFF;
   --lineHeight: 1.1em;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Avenir', 'Helvetica', sans-serif;
+  font-family: 'Overpass', 'Helvetica', sans-serif;
   overflow: hidden !important;
 }
 
@@ -37,6 +37,7 @@ body {
     background-color: var(--textColor);
   }
 }
+
 
 .background-image {
   position: absolute;
@@ -62,6 +63,7 @@ body {
 }
 
 .content {
+  z-index: 1;
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
@@ -139,3 +141,202 @@ h1, h2, h3, h4, h5, h6 {
     width: 12em;
   }
 }
+
+/*artwork*/
+
+#artwork, .js-artwork {
+  position: relative;
+  overflow: hidden;
+  margin: 0; }
+#artwork .artwork-inner, .js-artwork .artwork-inner {
+  position: relative; }
+#artwork .artwork-inner:before, .js-artwork .artwork-inner:before {
+  content: '';
+  display: block;
+  padding-bottom: 100%; }
+#artwork *, .js-artwork * {
+  margin: 0; }
+
+#artwork .artwork-shape, .js-artwork .artwork-shape {
+  position: absolute;
+  /*top: 0 !important;*/
+  /*bottom: 0 !important;*/
+  /*height: 100% !important;*/
+  margin: 0;
+  -webkit-transform: translateX(-100%) skewX(-45deg) !important;
+  transform: translateX(-100%) skewX(-45deg) !important;
+}
+
+#artwork, .js-artwork {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+#artwork:before, .js-artwork:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(#FFFFFF 0%, #6E6E6E 96%);
+  opacity: 0.2; }
+
+main, #bottom-right-logo {
+  z-index: 3; }
+
+.artwork-pattern svg {
+  stroke: #9fa9af; }
+
+/* ———————— THEMES ———————— */
+
+#artwork, .js-artwork {
+  background-color: #5E6A71; }
+
+#artwork:before, .js-artwork:before {
+  background-color: #5E6A71; }
+
+#artwork .artwork-shape, .js-artwork .artwork-shape {
+  background-color: #75848d; }
+
+  
+
+.reversed#artwork, .reversed.js-artwork {
+  background-color: #ffffff !important; }
+
+.reversed#artwork:before, .reversed.js-artwork:before {
+  background-color: #5E6A71; 
+  background-color: white !important; 
+}
+
+.reversed#artwork .artwork-shape, .reversed.js-artwork .artwork-shape {
+  background-color: #dddddd !important; }
+
+
+
+.corporate-artwork#artwork, .corporate-artwork.js-artwork {
+  background-color: #cc0000; }
+
+.corporate-artwork#artwork:before, .corporate-artwork.js-artwork:before {
+  background-color: #cc0000; }
+
+.corporate-artwork#artwork .artwork-shape, .corporate-artwork.js-artwork .artwork-shape {
+  background-color: #820000; }
+
+.reversed.corporate-artwork#artwork + main, .reversed.corporate-artwork.js-artwork + main {
+  color: #cc0000 !important; }
+
+
+
+.services-artwork#artwork, .services-artwork.js-artwork {
+  background-color: #5E6A71; }
+
+.services-artwork#artwork:before, .services-artwork.js-artwork:before {
+  background-color: #5E6A71; }
+
+.services-artwork#artwork .artwork-shape, .services-artwork.js-artwork .artwork-shape {
+  background-color: #37424A; }
+
+.reversed.services-artwork#artwork + main, .reversed.services-artwork.js-artwork + main {
+  color: #5E6A71 !important; }
+
+
+
+.storage-and-big-data-artwork#artwork, .storage-and-big-data-artwork.js-artwork {
+  background-color: #ed7700; }
+
+.storage-and-big-data-artwork#artwork:before, .storage-and-big-data-artwork.js-artwork:before {
+  background-color: #ed7700; }
+
+.storage-and-big-data-artwork#artwork .artwork-shape, .storage-and-big-data-artwork.js-artwork .artwork-shape {
+  background-color: #FFB612; }
+
+.reversed.storage-and-big-data-artwork#artwork + main, .reversed.storage-and-big-data-artwork.js-artwork + main {
+  color: #ed7700 !important; }
+
+
+
+.traditional-infrastructures-artwork#artwork, .traditional-infrastructures-artwork.js-artwork {
+  background-color: #0088CE; }
+
+.traditional-infrastructures-artwork#artwork:before, .traditional-infrastructures-artwork.js-artwork:before {
+  background-color: #0088CE; }
+
+.traditional-infrastructures-artwork#artwork .artwork-shape, .traditional-infrastructures-artwork.js-artwork .artwork-shape {
+  background-color: #4E9FDD; }
+
+.reversed.traditional-infrastructures-artwork#artwork + main, .reversed.traditional-infrastructures-artwork.js-artwork + main {
+  color: #0088CE !important; }
+
+
+
+.cloud-infrastructures-artwork#artwork, .cloud-infrastructures-artwork.js-artwork {
+  background-color: #0088CE; }
+
+.cloud-infrastructures-artwork#artwork:before, .cloud-infrastructures-artwork.js-artwork:before {
+  background-color: #0088CE; }
+
+.cloud-infrastructures-artwork#artwork .artwork-shape, .cloud-infrastructures-artwork.js-artwork .artwork-shape {
+  background-color: #4E9FDD; }
+
+.reversed.cloud-infrastructures-artwork#artwork + main, .reversed.cloud-infrastructures-artwork.js-artwork + main {
+  color: #0088CE !important; }
+
+
+
+.infrastructure-management-artwork#artwork, .infrastructure-management-artwork.js-artwork {
+  background-color: #0088CE; }
+
+.infrastructure-management-artwork#artwork:before , .infrastructure-management-artwork.js-artwork:before  {
+  background-color: #0088CE; }
+
+.infrastructure-management-artwork#artwork .artwork-shape, .infrastructure-management-artwork.js-artwork .artwork-shape {
+  background-color: #4E9FDD; }
+
+.reversed.infrastructure-management-artwork#artwork + main, .reversed.infrastructure-management-artwork.js-artwork + main {
+  color: #0088CE !important; }
+
+
+
+.traditional-app-development-artwork#artwork, .traditional-app-development-artwork.js-artwork {
+  background-color: #3F9C35; }
+
+.traditional-app-development-artwork#artwork:before, .traditional-app-development-artwork.js-artwork:before {
+  background-color: #3F9C35; }
+
+.traditional-app-development-artwork#artwork .artwork-shape, .traditional-app-development-artwork.js-artwork .artwork-shape {
+  background-color: #92D400; }
+
+.reversed.traditional-app-development-artwork#artwork + main, .reversed.traditional-app-development-artwork.js-artwork + main {
+  color: #3F9C35 !important; }
+
+
+
+.business-process-integration-artwork#artwork, .business-process-integration-artwork.js-artwork {
+  background-color: #3F9C35; }
+
+.business-process-integration-artwork#artwork:before, .business-process-integration-artwork.js-artwork:before {
+  background-color: #3F9C35; }
+
+.business-process-integration-artwork#artwork .artwork-shape, .business-process-integration-artwork.js-artwork .artwork-shape {
+  background-color: #92D400; }
+
+.reversed.business-process-integration-artwork#artwork + main, .reversed.business-process-integration-artwork.js-artwork + main {
+  color: #3F9C35 !important; }
+
+
+
+.cloud-app-development-artwork#artwork, .cloud-app-development-artwork.js-artwork {
+  background-color: #3F9C35; }
+
+.cloud-app-development-artwork#artwork:before, .cloud-app-development-artwork.js-artwork:before {
+  background-color: #3F9C35; }
+
+.cloud-app-development-artwork#artwork .artwork-shape, .cloud-app-development-artwork.js-artwork .artwork-shape {
+  background-color: #92D400; }
+
+.reversed.cloud-app-development-artwork#artwork + main, .reversed.cloud-app-development-artwork.js-artwork + main {
+  color: #3F9C35 !important; }
