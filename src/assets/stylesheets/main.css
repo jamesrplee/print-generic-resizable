@@ -10,6 +10,8 @@
 
 @custom-media --wider-and-shorter    (min-aspect-ratio: 12 / 3);
 
+@custom-media --even-wider-and-shorter    (min-aspect-ratio: 7 / 1);
+
 :root {
   --textColor: #444444;
   --backgroundColor: #FFFFFF;
@@ -70,6 +72,14 @@ body {
   color: var(--textColor);
 }
 
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--lineHeight);
   margin: 0;
@@ -95,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo {
-  width: 7em;
+  width: 5em;
   position: absolute;
   bottom: 0.65em;
   right: 0.65em;
@@ -107,19 +117,109 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.flex {
+  flex-direction:column;
+  position: absolute;
+  left: 1.5em;
+  right: 1.5em;
+  top: 1.5em;
+  bottom: 1.5em;
+  display: flex;  
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+
+}
+
+.redhat-logo, .sko-logo {
+  padding: 0.7em;
+}
+
+.redhat-logo-svg {
+  width: 100%;
+}
+
+.sko-logo-svg {
+  width: 100%;
+}
+
+.sko-logo {
+  width: 8em;
+}
+.redhat-logo {
+  width: 8em;
+}
+
 @media (--tall-and-thin) {
   html {
     font-size: 9vw !important;
   }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
 }
 
-@media (--taller-and-thinner) {}
+@media (--taller-and-thinner) {
+}
 
-@media (--wider-than-a-square) {}
+@media (--wider-than-a-square) {
+ .flex {
+  flex-direction:row;
+ }
+.redhat-logo-svg {
+  width: 100%;
+}
 
-@media (--wide-and-short) {}
+.sko-logo-svg {
+  width: 100%;
+}
+
+.sko-logo {
+  width: 15em;
+}
+.redhat-logo {
+  width: 10em;
+}
+
+}
+
+@media (--wide-and-short) {
+  .flex {
+    position: absolute;
+    left: 5em;
+    right: 5em;
+    top: 5em;
+    bottom: 5em;
+  }
+}
 
 @media (--wider-and-shorter) {
+
+  .redhat-logo, .sko-logo {
+    padding: 0.7em;
+  }
+
+  .sko-logo {
+    width: 15em;
+  }
+  .redhat-logo {
+    width: 11em;
+  }
+
+
+
+  #artwork .artwork-shape, .js-artwork .artwork-shape {
+    position: absolute;
+    top: 0 !important;
+    /*bottom: 0 !important;*/
+    /*height: 100% !important;*/
+    margin: 0;
+    -webkit-transform: translateX(-100%) skewX(-45deg) !important;
+    transform: translateX(-100%) skewX(-45deg) !important;
+  }
+
   html {
     font-size: 9vh !important;
   }
@@ -142,6 +242,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+@media (--even-wider-and-shorter) {
+  .flex {
+    justify-content: flex-end;
+  }
+  .sko-logo {
+    width: 20em;
+  }
+  .redhat-logo {
+    width: 15em;
+  }
+}
 /*artwork*/
 
 #artwork, .js-artwork {
@@ -175,6 +287,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   bottom: 0; }
 
+#artwork:after {
+   content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1748981/drawing3.svg);
+}
+
 #artwork:before, .js-artwork:before {
   content: '';
   position: absolute;
@@ -182,8 +307,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(#FFFFFF 0%, #6E6E6E 96%);
-  opacity: 0.2; }
+  background-image: radial-gradient(#FFFFFF 0%, #919191 96%);
+  opacity: 0.4; }
 
 main, #bottom-right-logo {
   z-index: 3; }
@@ -213,7 +338,7 @@ main, #bottom-right-logo {
 }
 
 .reversed#artwork .artwork-shape, .reversed.js-artwork .artwork-shape {
-  background-color: #dddddd !important; }
+  background-color: #EAEAEA !important; mix-blend-mode: multiply;}
 
 
 
@@ -339,4 +464,9 @@ main, #bottom-right-logo {
   background-color: #92D400; }
 
 .reversed.cloud-app-development-artwork#artwork + main, .reversed.cloud-app-development-artwork.js-artwork + main {
-  color: #3F9C35 !important; }
+  /*color: #3F9C35 !important; }*/
+}
+
+.sko-text, .sko-text *{
+  fill: #333333 !important;
+}
