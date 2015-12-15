@@ -1,12 +1,12 @@
-##The Basic Skeleton of a generic resizable Outfit Template
+##The Big Silver SKO Box
 
-This is a solid starting point for any future 'big red box-esque' [outfit](http://outfit.io) templating work.
+An SKO and Redhat Logo lockup resizable outfit template [outfit](http://outfit.io)
 
 <br>
 
 ##What does it do?
 
-This template allows you to easily create a generic resizable outfit template for your brand using this as a starting point. All the heavy lifting regarding scalable fonts for any dimension or size has been taken care of for you using `vminvmax`. Custom media queries for different aspect ratios have been created in `PostCSS` and `cssnext`. `cssnext` also has support for native css varibles. `PostCSS` also autoprefixes your css if a prefix is required. suck it `-webkit`.
+Scalable fonts for any dimension or size has been taken care of for you using `vminvmax`. Custom media queries for different aspect ratios have been created in `PostCSS` and `cssnext`. `cssnext` also has support for native css varibles. `PostCSS` also autoprefixes your css if a prefix is required. suck it `-webkit`.
 Finally all of your `mustache` variables are filled with data and a built version is able to be previewed in your browser on port `8080` by `node-static`.
 
 <br>
@@ -20,10 +20,10 @@ Before you start you need to have node and npm installed.
 ##Setting it up.
 
 1. Clone this Repository: <br>
-  `git clone https://github.com/johnpmorris/GenericResizable.git`
+  `git clone git@github.com:RedHatBrand/SKOGenericResizable.git`
 
 2. Navigate to the repo directory: <br>
-  `cd GenericResizable`
+  `cd SKOGenericResizable`
 
 3. Create build folder: <br>
   `mkdir -p build/assets/stylesheets && mkdir -p build/assets/javascripts`
@@ -42,9 +42,9 @@ Before you start you need to have node and npm installed.
 - The `/src` directory is where your working files are and will be the files you edit, they get compiled to the `/build` directory when the server is running.
 - Any time you change a file in the `/src` folder, the build will run again, recompiling your assets.
 
-###Outfit Variables
+###Outfit Inputs
 
-- Outfit uses the [mustache logicless templating language](https://mustache.github.io/) for creating Outfit Variables. These varaibles become the Inputs `authors` use to input data into the template.
+- Outfit uses the [mustache logicless templating language](https://mustache.github.io/) for creating Outfit Inputs. These are what `authors` use to input data into the template.
 
 - The `src/data.json` file is where the dummy data for your outfit variables will be stored
 
@@ -107,14 +107,12 @@ Before you start you need to have node and npm installed.
 
 ##Importing the template into outfit
 
-1. Create a new template.
+1. Copy the contents of `src/index.mst`
 
-2. Copy the contents of `src/index.mst`
+2. Edit the contents of `index.html.mst` in the outfit repo and paste in the code that you copied from `src/index.mst`
 
-3. Edit the contents of `index.html.mst` in the outfit repo and paste in the code that you copied from `src/index.mst`
+3. Copy contents of the files in `/build/assets` and create corresponding directories and files in outfit.
 
-4. Copy contents of the files in `/build/assets` and create corresponding directories and files in outfit.
+4. Navigate to the Inputs tab and fill out the missing ones
 
-5. Navigate to the tags view and create the missing variables.
-
-6. Booyah.
+5. Booyah.
