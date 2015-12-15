@@ -1,6 +1,8 @@
 ##The Big Silver SKO Box
 
-An SKO and Redhat Logo lockup resizable outfit template [outfit](http://outfit.io)
+An SKO and Redhat Logo lockup resizable outfit template 
+
+[https://redhat.outfit.io/templates/191/repository_files/index.html.mst](https://redhat.outfit.io/templates/191/repository_files/index.html.mst)
 
 <br>
 
