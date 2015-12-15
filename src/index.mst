@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="assets/stylesheets/main.css">
   <style type="text/css">
+
     .headline-font-size {
       font-size: {{headline-font-size}}em;
       /*template is designed for 1em to be used as a base font size*/
@@ -14,8 +15,8 @@
     }
   </style>
 </head>
-<body>
-  <div id="artwork" class="full-height reversed"></div>
+<body class="{{hide-logos}}">
+  <div id="artwork" class="full-height -artwork reversed"></div>
   {{#headline}}
     
   <div class="flex-headline-lockup">
@@ -23,9 +24,11 @@
       <div class="headline-font-size {{headline-border}}">
         <h1>{{{headline}}}</h1>
       </div>
+      {{#subheading}}
       <div class="subheading-font-size">
         <h2>{{{subheading}}}</h2>
       </div>
+      {{/subheading}}
     </div>
     <div class="flex-headline-logos">
       <div class="sko-logo">

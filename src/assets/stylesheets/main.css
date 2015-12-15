@@ -77,13 +77,14 @@ h1 {
 }
 
 .headline-font-size.border {
-  border-bottom: 1px solid var(--textColor);
+  border-bottom: 0.1em solid var(--textColor);
   margin-bottom: 0.4em
 }
 
 h2 {
   font-size: 1em;
   line-height: 1.3em;
+  font-weight: 300;
 
 }
 
@@ -631,4 +632,22 @@ main, #bottom-right-logo {
 
 .sko-text, .sko-text *{
   fill: #333333 !important;
+}
+
+.hide-redhat {
+  .redhat-logo {
+    display: none;
+  }
+}
+
+.hide-sko {
+  .sko-logo {
+    display: none;
+  }
+}
+
+.hide-both {
+  .sko-logo, .redhat-logo {
+    display: none;
+  }
 }
