@@ -13,7 +13,7 @@
 @custom-media --even-wider-and-shorter    (min-aspect-ratio: 7 / 1);
 
 :root {
-  --textColor: #444444;
+  --textColor: #333333;
   --backgroundColor: #FFFFFF;
   --lineHeight: 1.1em;
 }
@@ -32,7 +32,7 @@ body {
   bottom: 0;
   overflow: hidden;
   margin: 0;
-  color: #484747;
+  color: var(--textColor);
   background-color: var(--backgroundColor);
 
   &.reversed {
@@ -76,12 +76,18 @@ h1 {
   text-transform: uppercase;
 }
 
+.headline-font-size.border {
+  border-bottom: 1px solid var(--textColor);
+  margin-bottom: 0.4em
+}
+
 h2 {
   font-size: 1em;
+  line-height: 1.3em;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: var(--lineHeight);
   margin: 0;
 }
 
@@ -117,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.flex {
+.flex-lockup {
   flex-direction:column;
   position: absolute;
   left: 1.5em;
@@ -128,8 +134,13 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   box-sizing: border-box;
   align-items: center;
-
 }
+
+
+.text-content + .flex-lockup {
+  flex-direction:column;
+}
+
 
 .redhat-logo, .sko-logo {
   padding: 0.7em;
@@ -150,6 +161,40 @@ h1, h2, h3, h4, h5, h6 {
   width: 8em;
 }
 
+.flex-headline-lockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top:1.5em;
+  bottom: 1.5em;
+  left: 1.5em;
+  right: 1.5em;
+  align-items: center;
+
+  .text-content {
+    padding-right: 1em;
+  }
+}
+
+.flex-headline-logos {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+
+  .sko-logo {
+    width: 5em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 5em;
+    padding: 0.5em
+  }
+
+}
+
+
 @media (--tall-and-thin) {
   html {
     font-size: 9vw !important;
@@ -159,13 +204,71 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.7em;
   }
 
+  .redhat-logo, .sko-logo {
+    padding: 0.5em;
+  }
+
+  .flex-headline-logos {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+  .sko-logo {
+    width: 7em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 7em;
+    padding: 0.5em
+  }
+
+  } 
+
 }
 
 @media (--taller-and-thinner) {
 }
 
 @media (--wider-than-a-square) {
- .flex {
+
+  .flex-headline-lockup {
+
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top:2em;
+    bottom: 2em;
+    left: 2em;
+    right:2em;
+    display: flex;
+    align-items: center;
+
+  .text-content {
+    padding-right: 1em;
+  }
+}
+
+.flex-headline-logos {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+
+  .sko-logo {
+    width: 5em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 5em;
+    padding: 0.5em
+  }
+
+}
+
+
+
+ .flex-lockup {
   flex-direction:row;
  }
 .redhat-logo-svg {
@@ -186,13 +289,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (--wide-and-short) {
-  .flex {
+  .flex-lockup {
     position: absolute;
-    left: 5em;
-    right: 5em;
-    top: 5em;
-    bottom: 5em;
   }
+
+  .flex-headline-logos {
+  display: flex;
+  flex-direction: column;
+
+  .sko-logo {
+    width: 7em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 7em;
+    padding: 0.5em
+  }
+
+  }
+
 }
 
 @media (--wider-and-shorter) {
@@ -206,6 +321,29 @@ h1, h2, h3, h4, h5, h6 {
   }
   .redhat-logo {
     width: 11em;
+  }
+
+  .flex-headline-logos {
+  display: flex;
+  flex-direction: column;
+
+  .sko-logo {
+    width: 10em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 10em;
+    padding: 0.5em
+  }
+
+  }
+
+  h1 {
+    font-size: 2.7em;
+  }
+
+  h2 {
+    font-size: 1.3em;
   }
 
 
@@ -244,14 +382,38 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @media (--even-wider-and-shorter) {
-  .flex {
-    justify-content: flex-end;
+  .flex-lockup {
+    /*justify-content: flex-end;*/
   }
   .sko-logo {
     width: 20em;
   }
   .redhat-logo {
     width: 15em;
+  }
+
+  h1 {
+    font-size: 3.7em;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  .flex-headline-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .sko-logo {
+    width: 15em;
+    padding: 0.5em
+  }
+  .redhat-logo {
+    width: 15em;
+    padding: 0.5em
+  }
+
   }
 }
 /*artwork*/
