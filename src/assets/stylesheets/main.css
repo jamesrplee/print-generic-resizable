@@ -466,7 +466,7 @@ main, #bottom-right-logo {
 .silver-artwork#artwork:before, .silver-artwork.js-artwork:before {
   background-image: radial-gradient(var(--silverColor) 0%, var(--silverDarkerColor) 96%); }
 .silver-artwork#artwork:after, .silver-artwork.js-artwork:after {
-  background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-alt-100.svg); }
+  background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-alt-100.svg); opacity: 0.2;}
 .silver-artwork#artwork .artwork-shape, .silver-artwork.js-artwork .artwork-shape {
   background-color: var(--silverDarkColor); }
 

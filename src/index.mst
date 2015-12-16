@@ -15,8 +15,8 @@
     }
   </style>
 </head>
-<body class="{{hide-logos}} {{sko-theme}}-theme">
-  <div id="artwork" class="full-height {{sko-theme}}-artwork"></div>
+<body class="{{hide-logos}} {{sko-color-theme}}-theme {{^sko-color-theme}}silver-theme{{/sko-color-theme}}">
+  <div id="artwork" class="full-height {{sko-color-theme}}-artwork {{^sko-color-theme}}silver-artwork{{/sko-color-theme}}"></div>
   {{#headline}}
     
   <div class="flex-headline-lockup">
