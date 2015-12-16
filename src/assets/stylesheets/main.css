@@ -13,8 +13,17 @@
 @custom-media --even-wider-and-shorter    (min-aspect-ratio: 7 / 1);
 
 :root {
-  --textColor: #333333;
-  --backgroundColor: #FFFFFF;
+  --darkTextColor: #333333;
+  --lightTextColor: #FFFFFF;
+  --silverColor: #FFFFFF;
+  --silverDarkColor: #EAEAEA;
+  --silverDarkerColor: #919191;
+  --redColor: #CC0000;
+  --redDarkColor: #820000;
+  --redDarkerColor: #550000;
+  --slateColor: #5E6A71;
+  --slateDarkColor: #37424A;
+  --slateDarkerColor: #1E2429;
   --lineHeight: 1.1em;
 }
 
@@ -32,12 +41,8 @@ body {
   bottom: 0;
   overflow: hidden;
   margin: 0;
-  color: var(--textColor);
-  background-color: var(--backgroundColor);
-
-  &.reversed {
-    background-color: var(--textColor);
-  }
+  color: var(--darkTextColor);
+  background-color: var(--silverColor);
 }
 
 
@@ -53,23 +58,25 @@ body {
   background-position: center;
 }
 
-.reversed {
-  .content {
-    color: var(--backgroundColor);
-  }
+.silver-theme {
+  color: var(--darkTextColor);
+  fill: var(--darkTextColor) !important;
+}
 
-  .call-to-action {
-    color: var(--textColor);
-    background-color: var(--backgroundColor);
+.red-theme {
+  color: var(--lightTextColor);
+  fill: var(--lightTextColor) !important;
+  .text-content {
+    text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.22);
   }
 }
 
-.content {
-  z-index: 1;
-  height: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  color: var(--textColor);
+.slate-theme {
+  color: var(--lightTextColor);
+  fill: var(--lightTextColor) !important;
+  .text-content {
+    text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.22);
+  }
 }
 
 h1 {
@@ -77,7 +84,7 @@ h1 {
 }
 
 .headline-font-size.border {
-  border-bottom: 0.1em solid var(--textColor);
+  border-bottom: 0.1em solid currentColor;
   margin-bottom: 0.4em
 }
 
@@ -90,38 +97,6 @@ h2 {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-}
-
-.headline + .subheading {}
-
-.call-to-action {
-  margin-top: 1em;
-  font-size: 0.8em;
-  color: var(--backgroundColor);
-  background-color: var(--textColor);
-  text-decoration: none;
-  padding: 0.7em 1em;
-  display: inline-block;
-  font-weight: 800;
-}
-
-.reversed .logo {
-  * {
-    fill: var(--backgroundColor);
-  }
-}
-
-.logo {
-  width: 5em;
-  position: absolute;
-  bottom: 0.65em;
-  right: 0.65em;
-  top: auto;
-  left: auto;
-
-  * {
-    fill: var(--textColor);
-  }
 }
 
 .flex-lockup {
@@ -235,7 +210,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (--wider-than-a-square) {
 
   .flex-headline-lockup {
-
     flex-direction: row;
     justify-content: space-between;
     position: absolute;
@@ -246,46 +220,45 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
 
-  .text-content {
-    padding-right: 1em;
+    .text-content {
+      padding-right: 1em;
+    }
   }
-}
 
-.flex-headline-logos {
-  width: auto;
-  display: flex;
-  flex-direction: column;
+  .flex-headline-logos {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+    .sko-logo {
+      width: 5em;
+      padding: 0.5em
+    }
+    .redhat-logo {
+      width: 5em;
+      padding: 0.5em
+    }
+
+  }
+
+  .flex-lockup {
+    flex-direction:row;
+  }
+
+  .redhat-logo-svg {
+    width: 100%;
+  }
+
+  .sko-logo-svg {
+    width: 100%;
+  }
 
   .sko-logo {
-    width: 5em;
-    padding: 0.5em
+    width: 15em;
   }
   .redhat-logo {
-    width: 5em;
-    padding: 0.5em
+    width: 10em;
   }
-
-}
-
-
-
- .flex-lockup {
-  flex-direction:row;
- }
-.redhat-logo-svg {
-  width: 100%;
-}
-
-.sko-logo-svg {
-  width: 100%;
-}
-
-.sko-logo {
-  width: 15em;
-}
-.redhat-logo {
-  width: 10em;
-}
 
 }
 
@@ -295,17 +268,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .flex-headline-logos {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  .sko-logo {
-    width: 7em;
-    padding: 0.5em
-  }
-  .redhat-logo {
-    width: 7em;
-    padding: 0.5em
-  }
+    .sko-logo {
+      width: 7em;
+      padding: 0.5em
+    }
+    .redhat-logo {
+      width: 7em;
+      padding: 0.5em
+    }
 
   }
 
@@ -325,17 +298,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .flex-headline-logos {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  .sko-logo {
-    width: 10em;
-    padding: 0.5em
-  }
-  .redhat-logo {
-    width: 10em;
-    padding: 0.5em
-  }
+    .sko-logo {
+      width: 10em;
+      padding: 0.5em
+    }
+    .redhat-logo {
+      width: 10em;
+      padding: 0.5em
+    }
 
   }
 
@@ -346,8 +319,6 @@ h1, h2, h3, h4, h5, h6 {
   h2 {
     font-size: 1.3em;
   }
-
-
 
   #artwork .artwork-shape, .js-artwork .artwork-shape {
     position: absolute;
@@ -402,21 +373,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .flex-headline-logos {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  .sko-logo {
-    width: 15em;
-    padding: 0.5em
-  }
-  .redhat-logo {
-    width: 15em;
-    padding: 0.5em
-  }
-
+    .sko-logo {
+      width: 15em;
+      padding: 0.5em
+    }
+    .redhat-logo {
+      width: 15em;
+      padding: 0.5em
+    }
   }
 }
+
 /*artwork*/
 
 #artwork, .js-artwork {
@@ -460,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1748981/drawing3.svg);
+  transform: scale(-1)
 }
 
 #artwork:before, .js-artwork:before {
@@ -482,157 +453,47 @@ main, #bottom-right-logo {
 /* ———————— THEMES ———————— */
 
 #artwork, .js-artwork {
-  background-color: #5E6A71; }
-
+  background-color: var(--silverColor); }
 #artwork:before, .js-artwork:before {
-  background-color: #5E6A71; }
-
+  background-color: var(--silverColor); }
 #artwork .artwork-shape, .js-artwork .artwork-shape {
-  background-color: #75848d; }
+  background-color: var(--silverDarkColor); }
 
   
 
-.reversed#artwork, .reversed.js-artwork {
-  background-color: #ffffff !important; }
-
-.reversed#artwork:before, .reversed.js-artwork:before {
-  background-color: #5E6A71; 
-  background-color: white !important; 
-}
-
-.reversed#artwork .artwork-shape, .reversed.js-artwork .artwork-shape {
-  background-color: #EAEAEA !important; mix-blend-mode: multiply;}
+.silver-artwork#artwork, .silver-artwork.js-artwork {
+  background-color: var(--silverColor); }
+.silver-artwork#artwork:before, .silver-artwork.js-artwork:before {
+  background-image: radial-gradient(var(--silverColor) 0%, var(--silverDarkerColor) 96%); }
+.silver-artwork#artwork:after, .silver-artwork.js-artwork:after {
+  background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-alt-100.svg); }
+.silver-artwork#artwork .artwork-shape, .silver-artwork.js-artwork .artwork-shape {
+  background-color: var(--silverDarkColor); }
 
 
 
-.corporate-artwork#artwork, .corporate-artwork.js-artwork {
-  background-color: #cc0000; }
-
-.corporate-artwork#artwork:before, .corporate-artwork.js-artwork:before {
-  background-color: #cc0000; }
-
-.corporate-artwork#artwork .artwork-shape, .corporate-artwork.js-artwork .artwork-shape {
-  background-color: #820000; }
-
-.reversed.corporate-artwork#artwork + main, .reversed.corporate-artwork.js-artwork + main {
-  color: #cc0000 !important; }
+.red-artwork#artwork, .red-artwork.js-artwork {
+  background-color: var(--redColor); }
+.red-artwork#artwork:before, .red-artwork.js-artwork:before {
+  background-image: radial-gradient(var(--redColor) 0%, var(--redDarkerColor) 96%); }
+.red-artwork#artwork:after, .red-artwork.js-artwork:after {
+  background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/red/positioned-08-04-alt-100.svg); }
+.red-artwork#artwork .artwork-shape, .red-artwork.js-artwork .artwork-shape {
+  background-color: var(--redDarkColor); }
 
 
 
-.services-artwork#artwork, .services-artwork.js-artwork {
-  background-color: #5E6A71; }
-
-.services-artwork#artwork:before, .services-artwork.js-artwork:before {
-  background-color: #5E6A71; }
-
-.services-artwork#artwork .artwork-shape, .services-artwork.js-artwork .artwork-shape {
-  background-color: #37424A; }
-
-.reversed.services-artwork#artwork + main, .reversed.services-artwork.js-artwork + main {
-  color: #5E6A71 !important; }
+.slate-artwork#artwork, .slate-artwork.js-artwork {
+  background-color: var(--slateColor); }
+.slate-artwork#artwork:before, .slate-artwork.js-artwork:before {
+  background-image: radial-gradient(var(--slateColor) 0%, var(--slateDarkerColor) 96%); }
+.slate-artwork#artwork:after, .slate-artwork.js-artwork:after {
+  opacity: 0.2;
+  background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-alt-100.svg); }
+.slate-artwork#artwork .artwork-shape, .slate-artwork.js-artwork .artwork-shape {
+  background-color: var(--slateDarkColor); }
 
 
-
-.storage-and-big-data-artwork#artwork, .storage-and-big-data-artwork.js-artwork {
-  background-color: #ed7700; }
-
-.storage-and-big-data-artwork#artwork:before, .storage-and-big-data-artwork.js-artwork:before {
-  background-color: #ed7700; }
-
-.storage-and-big-data-artwork#artwork .artwork-shape, .storage-and-big-data-artwork.js-artwork .artwork-shape {
-  background-color: #FFB612; }
-
-.reversed.storage-and-big-data-artwork#artwork + main, .reversed.storage-and-big-data-artwork.js-artwork + main {
-  color: #ed7700 !important; }
-
-
-
-.traditional-infrastructures-artwork#artwork, .traditional-infrastructures-artwork.js-artwork {
-  background-color: #0088CE; }
-
-.traditional-infrastructures-artwork#artwork:before, .traditional-infrastructures-artwork.js-artwork:before {
-  background-color: #0088CE; }
-
-.traditional-infrastructures-artwork#artwork .artwork-shape, .traditional-infrastructures-artwork.js-artwork .artwork-shape {
-  background-color: #4E9FDD; }
-
-.reversed.traditional-infrastructures-artwork#artwork + main, .reversed.traditional-infrastructures-artwork.js-artwork + main {
-  color: #0088CE !important; }
-
-
-
-.cloud-infrastructures-artwork#artwork, .cloud-infrastructures-artwork.js-artwork {
-  background-color: #0088CE; }
-
-.cloud-infrastructures-artwork#artwork:before, .cloud-infrastructures-artwork.js-artwork:before {
-  background-color: #0088CE; }
-
-.cloud-infrastructures-artwork#artwork .artwork-shape, .cloud-infrastructures-artwork.js-artwork .artwork-shape {
-  background-color: #4E9FDD; }
-
-.reversed.cloud-infrastructures-artwork#artwork + main, .reversed.cloud-infrastructures-artwork.js-artwork + main {
-  color: #0088CE !important; }
-
-
-
-.infrastructure-management-artwork#artwork, .infrastructure-management-artwork.js-artwork {
-  background-color: #0088CE; }
-
-.infrastructure-management-artwork#artwork:before , .infrastructure-management-artwork.js-artwork:before  {
-  background-color: #0088CE; }
-
-.infrastructure-management-artwork#artwork .artwork-shape, .infrastructure-management-artwork.js-artwork .artwork-shape {
-  background-color: #4E9FDD; }
-
-.reversed.infrastructure-management-artwork#artwork + main, .reversed.infrastructure-management-artwork.js-artwork + main {
-  color: #0088CE !important; }
-
-
-
-.traditional-app-development-artwork#artwork, .traditional-app-development-artwork.js-artwork {
-  background-color: #3F9C35; }
-
-.traditional-app-development-artwork#artwork:before, .traditional-app-development-artwork.js-artwork:before {
-  background-color: #3F9C35; }
-
-.traditional-app-development-artwork#artwork .artwork-shape, .traditional-app-development-artwork.js-artwork .artwork-shape {
-  background-color: #92D400; }
-
-.reversed.traditional-app-development-artwork#artwork + main, .reversed.traditional-app-development-artwork.js-artwork + main {
-  color: #3F9C35 !important; }
-
-
-
-.business-process-integration-artwork#artwork, .business-process-integration-artwork.js-artwork {
-  background-color: #3F9C35; }
-
-.business-process-integration-artwork#artwork:before, .business-process-integration-artwork.js-artwork:before {
-  background-color: #3F9C35; }
-
-.business-process-integration-artwork#artwork .artwork-shape, .business-process-integration-artwork.js-artwork .artwork-shape {
-  background-color: #92D400; }
-
-.reversed.business-process-integration-artwork#artwork + main, .reversed.business-process-integration-artwork.js-artwork + main {
-  color: #3F9C35 !important; }
-
-
-
-.cloud-app-development-artwork#artwork, .cloud-app-development-artwork.js-artwork {
-  background-color: #3F9C35; }
-
-.cloud-app-development-artwork#artwork:before, .cloud-app-development-artwork.js-artwork:before {
-  background-color: #3F9C35; }
-
-.cloud-app-development-artwork#artwork .artwork-shape, .cloud-app-development-artwork.js-artwork .artwork-shape {
-  background-color: #92D400; }
-
-.reversed.cloud-app-development-artwork#artwork + main, .reversed.cloud-app-development-artwork.js-artwork + main {
-  /*color: #3F9C35 !important; }*/
-}
-
-.sko-text, .sko-text *{
-  fill: #333333 !important;
-}
 
 .hide-redhat {
   .redhat-logo {
