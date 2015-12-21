@@ -1,13 +1,13 @@
 {
-  "headline": "",
+  "headline": "Registration is open",
   "subheading": "Sales kick off, Europe, Middle East and Asia",
   "background-image": "",
-  "headline-font-size": "1",
+  "headline-font-size": "0.8",
   "subheading-font-size": "1",
   "sko-color-theme": "slate",
   "call-to-action": "Click to Deny.",
   "headline-border": "border",
   "sko-region": "Europe, Middle East & Africa",
   "call-to-action-url": "#",
-  "hide-logos": "hide-redhat"
+  "hide-logos": ""
 }

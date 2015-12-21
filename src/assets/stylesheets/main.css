@@ -79,6 +79,14 @@ body {
   }
 }
 
+.red-theme .logotext.logotype {
+  fill: #FFFFFF !important;
+}
+
+.slate-theme .logotext.logotype {
+  fill: #FFFFFF !important;
+}
+
 h1 {
   text-transform: uppercase;
 }
@@ -123,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .redhat-logo-svg {
-  width: 100%;
+  width: 80%;
 }
 
 .sko-logo-svg {
@@ -134,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 8em;
 }
 .redhat-logo {
-  width: 8em;
+  width: 7.5em;
 }
 
 .flex-headline-lockup {
@@ -165,7 +173,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   .redhat-logo {
     width: 5em;
-    padding: 0.5em
+    padding: 0.5em;
+
+    .redhat-logo-svg {
+      width: 82%;
+    }
   }
 
 }
@@ -263,6 +275,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (--wide-and-short) {
+
+  .hide-redhat .flex-headline-logos .sko-logo {
+    width: 12em;
+  }
+
+
   .flex-lockup {
     position: absolute;
   }
@@ -285,6 +303,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (--wider-and-shorter) {
+  .hide-redhat .flex-headline-logos .sko-logo {
+    width: 15em;
+  }
+
 
   .redhat-logo, .sko-logo {
     padding: 0.7em;
