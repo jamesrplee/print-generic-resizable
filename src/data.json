@@ -1,13 +1,18 @@
 {
   "headline": "Registration is open",
   "subheading": "Sales kick off, Europe, Middle East and Asia",
-  "background-image": "",
   "headline-font-size": "0.8",
   "subheading-font-size": "1",
-  "sko-color-theme": "slate",
-  "call-to-action": "Click to Deny.",
+  "sko-color-theme": "silver",
+    "sko-color-theme options": "<silver> [default], <red>, <slate>",
   "headline-border": "border",
   "sko-region": "Europe, Middle East & Africa",
-  "call-to-action-url": "#",
-  "hide-logos": ""
+    "sko-region options": "<Europe, Middle East & Africa>, <Asia Pacific>, <North America>, <Latin America>",
+  "layout": "sko-with-subheading",
+    "layout-options": "<double-logo> [default], <red-hat-only>, <sko-center>, <sko-and-all-text>, <sko-with-subheading>",
+  "crop-bleed": "crop-yes",
+  "pullup-non-visible-area": "no",
+  "headline": "FY17",
+  "subheading": "Hello what's up? THis is a subheading",
+  "headline-border": "border"
 }

@@ -30,7 +30,6 @@
 html {
   -webkit-font-smoothing: antialiased;
   font-family: 'Overpass', 'Helvetica', sans-serif;
-  overflow: hidden !important;
 }
 
 body {
@@ -39,23 +38,30 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  overflow: hidden;
   margin: 0;
   color: var(--darkTextColor);
   background-color: var(--silverColor);
 }
 
-
-.background-image {
-  position: absolute;
+.content {
+  margin: 0.23in;
+  box-sizing: border-box;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
+  position: absolute;
+}
+
+.crop-no .document {
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.crop-no .content {
+  margin: 0;
 }
 
 .silver-theme {
@@ -93,7 +99,7 @@ h1 {
 
 .headline-font-size.border {
   border-bottom: 0.1em solid currentColor;
-  margin-bottom: 0.4em
+  margin-bottom: 0.4em;
 }
 
 h2 {
@@ -107,42 +113,24 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.flex-lockup {
-  flex-direction:column;
-  position: absolute;
-  left: 1.5em;
-  right: 1.5em;
-  top: 1.5em;
-  bottom: 1.5em;
-  display: flex;  
-  justify-content: center;
-  box-sizing: border-box;
-  align-items: center;
+.flex-headline-logos {
+  display: flex;
 }
-
-
-.text-content + .flex-lockup {
-  flex-direction:column;
-}
-
 
 .redhat-logo, .sko-logo {
-  padding: 0.7em;
+  padding: 1em;
 }
 
 .redhat-logo-svg {
-  width: 80%;
+  width: 68%;
+  margin: 0 auto;
+  display: block;
 }
 
 .sko-logo-svg {
-  width: 100%;
-}
-
-.sko-logo {
-  width: 8em;
-}
-.redhat-logo {
-  width: 7.5em;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
 }
 
 .flex-headline-lockup {
@@ -155,33 +143,191 @@ h1, h2, h3, h4, h5, h6 {
   left: 1.5em;
   right: 1.5em;
   align-items: center;
+  width: 100%;
 
   .text-content {
-    padding-right: 1em;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
 .flex-headline-logos {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   .sko-logo {
-    width: 5em;
-    padding: 0.5em
+    width: 100%;
+    padding: 0.5em;
   }
   .redhat-logo {
-    width: 5em;
-    padding: 0.5em;
+    width: 100%;
+    padding: 0.5em
+  }
+}
+
+.border {
+  border-bottom: 0.1em solid currentColor;
+  margin-bottom: 0.4em
+}
+
+
+/* LAYOUTS */
+
+.double-logo {
+  .flex-headline-lockup {
+    display: none;
+  }
+}
+
+.red-hat-only {
+  .sko-logo {
+    display:none;
+  }
+
+  .flex-headline-logos .redhat-logo {
+    display:block;
+    width:11em;
+  }
+
+  .flex-headline-lockup {
+    display: none;
+  }
+}
+
+.sko-center {
+  .flex-headline-logos .redhat-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    padding: 0;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
 
     .redhat-logo-svg {
-      width: 82%;
+      width: 100%;
     }
   }
 
+  .flex-headline-lockup {
+    display: none;
+  }
+  .show-pullup-non-visible-area-yes {
+    .flex-headline-logos .redhat-logo {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      padding: 0;
+      margin-bottom: 2em;
+      margin-right: 1.7em;
+    }
+  }
 }
 
+.sko-and-all-text {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-headline-logos, .flex-headline-lockup {
+    position: initial;
+    height: initial;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display:block;
+  }
+
+  .flex-headline-logos .redhat-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    padding: 0;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    display:block;
+
+    .redhat-logo-svg {
+      width: 100%;
+    }
+  }
+
+  .sko-logo {
+    padding: 0.25em 0;
+  }
+
+  .text-content {
+    padding: 0.25em 0;
+  }
+}
+
+.sko-with-subheading {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-headline-logos {
+    order: 1;
+  }
+
+  .flex-headline-lockup {
+    order: 2;
+  }
+
+  .headline-font-size h1 {
+    display: none;
+  }
+
+  .flex-headline-logos, .flex-headline-lockup {
+    position: initial;
+    height: initial;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display:block;
+  }
+
+  .flex-headline-logos .redhat-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    padding: 0;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    display:block;
+
+    .redhat-logo-svg {
+      width: 100%;
+    }
+  }
+
+  .sko-logo {
+    padding: 0.25em 0;
+  }
+
+  .text-content {
+    padding: 0.25em 0;
+  }
+}
+
+
+
+/* MEDIA QUERIES */
 
 @media (--tall-and-thin) {
   html {
@@ -196,27 +342,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5em;
   }
 
-  .flex-headline-logos {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-  .sko-logo {
-    width: 7em;
-    padding: 0.5em
+  .sko-center .flex-headline-logos .redhat-logo, .sko-and-all-text .flex-headline-logos .redhat-logo {
+    margin-bottom: 2em;
+    margin-right: 2em;
   }
-  .redhat-logo {
-    width: 7em;
-    padding: 0.5em
-  }
-
-  } 
-
 }
 
 @media (--taller-and-thinner) {
+  .sko-center .flex-headline-logos .redhat-logo, .sko-and-all-text .flex-headline-logos .redhat-logo {
+    margin-bottom: 3em;
+    margin-right: 3em;
+  }
 }
 
 @media (--wider-than-a-square) {
@@ -243,85 +379,65 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 
     .sko-logo {
-      width: 5em;
+      width: 10em;
       padding: 0.5em
     }
     .redhat-logo {
-      width: 5em;
+      width: 5em !important;
       padding: 0.5em
     }
 
   }
 
-  .flex-lockup {
-    flex-direction:row;
-  }
-
-  .redhat-logo-svg {
-    width: 100%;
-  }
-
-  .sko-logo-svg {
-    width: 100%;
-  }
-
-  .sko-logo {
-    width: 15em;
-  }
-  .redhat-logo {
+  .sko-and-all-text .text-content, .sko-with-subheading .text-content {
+    padding: 0.25em 0;
     width: 10em;
+  }
+
+  .sko-with-subheading .sko-logo-svg {
+    width: 100%;
   }
 
 }
 
 @media (--wide-and-short) {
-
-  .hide-redhat .flex-headline-logos .sko-logo {
-    width: 12em;
+  
+  .content {
+    width: 100%;
   }
 
-
-  .flex-lockup {
-    position: absolute;
-  }
-
-  .flex-headline-logos {
+  .sko-center .flex-headline-logos {
     display: flex;
     flex-direction: column;
 
     .sko-logo {
-      width: 7em;
+      width: 13em !important;
       padding: 0.5em
     }
+
     .redhat-logo {
       width: 7em;
       padding: 0.5em
     }
-
   }
 
+  .sko-center .flex-headline-logos .redhat-logo, .sko-with-subheading .flex-headline-logos .redhat-logo {
+    margin-bottom: 2em;
+    margin-right: 2em;
+  }
+
+  .sko-and-all-text .content {
+    flex-direction: row;
+  }
 }
 
 @media (--wider-and-shorter) {
-  .hide-redhat .flex-headline-logos .sko-logo {
-    width: 15em;
-  }
-
-
-  .redhat-logo, .sko-logo {
-    padding: 0.7em;
-  }
-
-  .sko-logo {
-    width: 15em;
-  }
-  .redhat-logo {
-    width: 11em;
-  }
 
   .flex-headline-logos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     .sko-logo {
       width: 10em;
@@ -372,19 +488,50 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1.5rem;
     width: 12em;
   }
+
+  .sko-center .flex-headline-logos .redhat-logo, .sko-with-subheading .flex-headline-logos .redhat-logo {
+    margin-bottom: 2.5em;
+    margin-right: 2.5em;
+  }
+
+  .sko-and-all-text .text-content{
+    margin: 0;
+    width: 55%;
+  }
+
+  .sko-and-all-text .flex-headline-logos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sko-and-all-text .redhat-logo {
+    position:initial !important;
+    bottom: initial !important;
+    right: initial !important;
+    margin-bottom: initial !important;
+    margin-right: initial !important;
+  }
+
+  .sko-and-all-text .redhat-logo, .sko-and-all-text .sko-logo {
+    width: 9em !important;
+    padding: 0.5em 0 !important;
+  }
+
+  .sko-and-all-text .redhat-logo .redhat-logo-svg {
+    width: 80% !important;
+  }
+
+  .sko-with-subheading .content {
+    align-items: flex-start;
+  }
+
+  .sko-with-subheading .text-content {
+    margin: 0;
+  }
 }
 
 
 @media (--even-wider-and-shorter) {
-  .flex-lockup {
-    /*justify-content: flex-end;*/
-  }
-  .sko-logo {
-    width: 20em;
-  }
-  .redhat-logo {
-    width: 15em;
-  }
 
   h1 {
     font-size: 3.7em;
@@ -408,14 +555,55 @@ h1, h2, h3, h4, h5, h6 {
       padding: 0.5em
     }
   }
+
+  .sko-center .flex-headline-logos .redhat-logo {
+    margin-bottom: 3em;
+    margin-right: 3em;
+  }
+
+  .sko-and-all-text .text-content {
+    margin: 0 !important;
+    width: 55%;
+  }
+
+  .sko-and-all-text .text-content {
+    margin: 0;
+    width: 55%;
+  }
+
+  .sko-and-all-text .flex-headline-logos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sko-and-all-text .redhat-logo {
+    position:initial !important;
+    bottom: initial !important;
+    right: initial !important;
+    margin-bottom: initial !important;
+    margin-right: initial !important;
+  }
+
+  .sko-and-all-text .redhat-logo, .sko-and-all-text .sko-logo {
+    width: 9em !important;
+    padding: 0.5em 0 !important;
+  }
+
+  .sko-and-all-text .redhat-logo .redhat-logo-svg {
+    width: 80% !important;
+  }
 }
 
-/*artwork*/
+
+
+
+/*  ARTWORK  */
 
 #artwork, .js-artwork {
   position: relative;
   overflow: hidden;
-  margin: 0; }
+  margin: 0;
+  z-index: -1; }
 #artwork .artwork-inner, .js-artwork .artwork-inner {
   position: relative; }
 #artwork .artwork-inner:before, .js-artwork .artwork-inner:before {
@@ -436,12 +624,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #artwork, .js-artwork {
-  position: absolute;
-  z-index: -1;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  position: absolute;
+}
 
 #artwork:after {
    content: '';
@@ -481,7 +669,6 @@ main, #bottom-right-logo {
 #artwork .artwork-shape, .js-artwork .artwork-shape {
   background-color: var(--silverDarkColor); }
 
-  
 
 .silver-artwork#artwork, .silver-artwork.js-artwork {
   background-color: var(--silverColor); }
@@ -492,8 +679,6 @@ main, #bottom-right-logo {
 .silver-artwork#artwork .artwork-shape, .silver-artwork.js-artwork .artwork-shape {
   background-color: var(--silverDarkColor); }
 
-
-
 .red-artwork#artwork, .red-artwork.js-artwork {
   background-color: var(--redColor); }
 .red-artwork#artwork:before, .red-artwork.js-artwork:before {
@@ -502,8 +687,6 @@ main, #bottom-right-logo {
   background-image: url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/red/positioned-08-04-alt-100.svg); }
 .red-artwork#artwork .artwork-shape, .red-artwork.js-artwork .artwork-shape {
   background-color: var(--redDarkColor); }
-
-
 
 .slate-artwork#artwork, .slate-artwork.js-artwork {
   background-color: var(--slateColor); }
@@ -517,20 +700,81 @@ main, #bottom-right-logo {
 
 
 
-.hide-redhat {
-  .redhat-logo {
-    display: none;
+/* PULL UP BANNER VISIBLE PRINTING LINES */
+
+@media screen {
+  .show-pullup-non-visible-area-yes .banner-print-line-bottom {
+    border-top: 1px dashed red;
+    display: block !important;
+    position:absolute;
+    width:100%;
+    height: 5.90551in;
+    bottom: 0.5in;
+    background-color: rgba(255,0,0,0.2);
+  }
+
+  .show-pullup-non-visible-area-yes .banner-print-line-top {
+    border-bottom: 1px dashed red;
+    display: block !important;
+    position:absolute;
+    width:100%;
+    height: 0.393701in;
+    top: 0.5in;
+    z-index: 1;
+    background-color: rgba(255,0,0,0.2);
   }
 }
 
-.hide-sko {
-  .sko-logo {
-    display: none;
-  }
+
+
+/* CROPS --- SIZING OF THE PAGE ELEMENTS */ 
+
+
+.document { 
+  box-sizing: content-box;
+  left: .25in;
+  right: .25in;
+  top: .25in;
+  bottom: .25in;
+  position: absolute;
 }
 
-.hide-both {
-  .sko-logo, .redhat-logo {
-    display: none;
-  }
+.crop { 
+  position: absolute; 
+  width: 0.50in; 
+  height: 0.50in; 
 }
+
+.crop-no .crop {
+  display: none;
+}
+
+/* CROP MARKS */
+.crop.top-left                    { top: 0; left: 0; }
+.crop.top-left     .right         { position: absolute; right: 1px; top: 0; bottom: 3mm; border-right: 1px solid black; }
+.crop.top-left     .right:before  { content: ''; position: absolute; right: 0px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.top-left     .right:after   { content: ''; position: absolute; right: -2px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.top-left     .bottom        { position: absolute; right: 3mm; left: 0; top: 0; bottom: 1px; border-bottom: 1px solid black; }
+.crop.top-left     .bottom:before { content: ''; position: absolute; right: 0px; bottom: 0mm; left: 0; border-bottom: 1px solid white; }
+.crop.top-left     .bottom:after  { left: 0; content: ''; position: absolute; bottom: -2px; right: 0; border-bottom: 1px solid white; }
+.crop.top-right                   { top: 0; right: 0; }
+.crop.top-right    .left          { position: absolute; left: 1px; top: 0; bottom: 3mm; border-right: 1px solid black; }
+.crop.top-right    .left:before   { content: ''; position: absolute; right: 0px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.top-right    .left:after    { content: ''; position: absolute; right: -2px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.top-right    .bottom        { position: absolute; left: 3mm; right: 0; top: 0; bottom: 1px; border-bottom: 1px solid black; }
+.crop.top-right    .bottom:before { content: ''; position: absolute; right: 0px; bottom: 0mm; left: 0; border-bottom: 1px solid white; }
+.crop.top-right    .bottom:after  { left: 0; content: ''; position: absolute; bottom: -2px; right: 0; border-bottom: 1px solid white; }
+.crop.bottom-right                { right: 0; bottom: 0; }
+.crop.bottom-right .left          { position: absolute; left: 1px; top: 3mm; bottom: 0mm; border-left: 1px solid black; }
+.crop.bottom-right .left:before   { content: ''; position: absolute; left: 0px; top: 0; bottom: 0mm; border-left: 1px solid white; }
+.crop.bottom-right .left:after    { content: ''; position: absolute; left: -2px; top: 0; bottom: 0mm; border-left: 1px solid white; }
+.crop.bottom-right .top           { position: absolute; left: 3mm; right: 0; top: 1px; bottom: 0px; border-top: 1px solid black; }
+.crop.bottom-right .top:before    { content: ''; position: absolute; right: 0px; top: 0mm; left: 0; border-top: 1px solid white; }
+.crop.bottom-right .top:after     { left: 0; content: ''; position: absolute; top: -2px; right: 0; border-top: 1px solid white; }
+.crop.bottom-left                 { bottom: 0; }
+.crop.bottom-left  .right         { position: absolute; right: 1px; top: 3mm; bottom: 0mm; border-right: 1px solid black; }
+.crop.bottom-left  .right:before  { content: ''; position: absolute; right: 0px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.bottom-left  .right:after   { content: ''; position: absolute; right: -2px; top: 0; bottom: 0mm; border-right: 1px solid white; }
+.crop.bottom-left  .top           { position: absolute; right: 3mm; left: 0; top: 1px; bottom: 0px; border-top: 1px solid black; }
+.crop.bottom-left  .top:before    { content: ''; position: absolute; right: 0px; top: 0mm; left: 0; border-top: 1px solid white; }
+.crop.bottom-left  .top:after     { left: 0; content: ''; position: absolute; top: -2px; right: 0; border-top: 1px solid white; }
